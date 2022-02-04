@@ -3,13 +3,74 @@
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
     xmlns="sap.m"
+    xmlns:core="sap.ui.core"
 >
     <Shell id="shell">
         <App id="app">
             <pages>
                 <Page id="page" title="{i18n>title}">
                     <content>
-                        <Text id="idTxtH" text="Hola Mundo" ></Text>
+                        <Panel id="idpan1" headerText="{i18n>view.selscreen}">
+                            <Label id="labelShipName" labelFor="shipName" text="{i18n>view.shipn}" class="sapUiSmallMargin" />
+                            <Input id="shipName" value="{selectionScreen>/ShipName}" width="200px" class="sapUiSmallMarginEnd" />
+                            <Label id="labelCountry" text="{i18n>view.country}" class="sapUiSmallMargin" />
+                            <!--
+                            <Select id="idSelCountry"
+					            forceSelection="false"
+					            selectedKey="{/SelectedProduct}"
+                                items="{
+                                    path: '/ProductCollection',
+                                    sorter: { path: 'Name' }
+                                }">
+                                <core:Item id="idCountry" key="{ProductId}" text="{Name}" />
+                                </Select>
+                            -->
+                            
+                            <Select id="idSelCountry"
+                                    selectedKey="{selectionScreen>/CountryKey}"
+                                    forceSelection="false"
+                                    items="{selectionScreen>/Countries}"
+                            >
+                                <items>
+                                    <core:Item id="idCountry" key="{selectionScreen>key}" text="{selectionScreen>text}" />
+                                </items>    
+                            </Select>
+
+                            <Button id="idBtnFilters"
+                                    text="{i18n>view.btnFilter}"
+                                    icon="sap-icon://filter"
+                                    press="onFilter"
+                                    class="sapUiSmallMarginEnd"
+                            />
+
+                            <Button id="idBtnClearFilters"
+                                    text="{i18n>view.btnClearFilter}"
+                                    icon="sap-icon://clear-filter"
+                                    press="onClearFilter"
+                                    class="sapUiSmallMarginEnd"
+                            />
+                        </Panel>
+
+                        <Panel id="idpan2">
+                            <List id="invoicesList"
+                                    headerText="{i18n>invoicesHeaderList}"
+                                    class="sapUiResponsiveMargin"
+                                    width="auto"
+                                    items="{/Invoices}">
+                                <items>
+                                    <ObjectListItem id="idObjLisItem" title="{ShipName} - {Country}"
+                                        number="{ parts : [ {path: 'ExtendedPrice'},
+                                                            {path: 'selectionScreen>/Currency'}],
+                                                type: 'sap.ui.model.type.Currency',
+                                                formatOptions: {
+                                                    showMeasure : false
+                                                }}"
+                                        numberUnit="{selectionScreen>/Currency}"
+                                        numberState="{= ${ExtendedPrice} > 100 ? 'Success' : 'Warning'}">
+                                    </ObjectListItem>
+                                </items>
+                            </List>
+                        </Panel>
                     </content>
                 </Page>
             </pages>

@@ -1,0 +1,41 @@
+[33mcommit 56881482f3865b1df5c19bc0cdd19e4850b6df04[m[33m ([m[1;36mHEAD -> [m[1;32mdevelopment[m[33m, [m[1;31morigin/development[m[33m)[m
+Author: mauuricioherrera <mauuricio.herrera@gmail.com>
+Date:   Wed Jan 26 23:11:50 2022 +0000
+
+    First Commit on development
+
+ .gitignore                                         |   10 [32m+[m
+ .vscode/launch.json                                |   30 [32m+[m
+ README.md                                          |   36 [32m+[m
+ package-lock.json                                  | 6564 [32m++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+ package.json                                       |   34 [32m+[m
+ ui5-local.yaml                                     |   39 [32m+[m
+ ui5.yaml                                           |   32 [32m+[m
+ webapp/Component.js                                |   31 [32m+[m
+ webapp/controller/MainView.controller.js           |   15 [32m+[m
+ webapp/css/style.css                               |    1 [32m+[m
+ webapp/i18n/i18n.properties                        |   11 [32m+[m
+ webapp/index.html                                  |   35 [32m+[m
+ webapp/localService/mockserver.js                  |  116 [32m++[m
+ webapp/manifest.json                               |  114 [32m++[m
+ webapp/model/models.js                             |   16 [32m+[m
+ webapp/test/flpSandbox.html                        |   79 [32m++[m
+ webapp/test/flpSandbox.js                          |  100 [32m++[m
+ webapp/test/initFlpSandbox.js                      |   13 [32m+[m
+ webapp/test/initMockServer.js                      |   18 [32m+[m
+ webapp/test/integration/AllJourneys.js             |   13 [32m+[m
+ webapp/test/integration/NavigationJourney.js       |   21 [32m+[m
+ webapp/test/integration/arrangements/Startup.js    |   31 [32m+[m
+ webapp/test/integration/opaTests.qunit.html        |   35 [32m+[m
+ webapp/test/integration/opaTests.qunit.js          |   11 [32m+[m
+ webapp/test/integration/pages/MainView.js          |   27 [32m+[m
+ webapp/test/mockServer.html                        |   30 [32m+[m
+ webapp/test/testsuite.qunit.html                   |   12 [32m+[m
+ webapp/test/testsuite.qunit.js                     |   15 [32m+[m
+ webapp/test/unit/AllTests.js                       |    5 [32m+[m
+ webapp/test/unit/controller/MainView.controller.js |   16 [32m+[m
+ webapp/test/unit/unitTests.qunit.html              |   33 [32m+[m
+ webapp/test/unit/unitTests.qunit.js                |   12 [32m+[m
+ webapp/utils/locate-reuse-libs.js                  |  173 [32m+++[m
+ webapp/view/MainView.view.xml                      |   18 [32m+[m
+ 34 files changed, 7746 insertions(+)

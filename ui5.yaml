@@ -17,8 +17,8 @@ server:
           url: https://ui5.sap.com
           version: '' # The UI5 version, for instance, 1.78.1. Empty string means latest version
         backend:
-          - path: /sap
-            url: http://localhost
+          - path: /V2
+            url: https://northwind.dest
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:
